@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html>
+<title>EMPLOWER</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+<!-- allow for drag and dropping options -->
+<head>
+
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="/" class="w3-bar-item w3-button">EM<b>P</b>L<b>OWER</b> Austin</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+    <!--  <a href="#projects" class="w3-bar-item w3-button">Emplower</a> -->
+      <a href="/about" class="w3-bar-item w3-button">About</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="/static/img/office_cardsort.jpg" alt="Architecture" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>EMPLOWER</b></span> </h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+<!--  <div class="w3-container w3-padding-32" id="projects"> -->
+<!--    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">EMPLOWER</h3> -->
+<!--  </div> -->
+
+  <div class="w3-container w3-padding-32" id="description">
+    <p class=" w3-border-light-grey w3-padding-1">
+    Finding a job is hard. Women face additional challenges finding workplaces with an inclusive culture. Emplower helps women find tech companies to work for in Austin, TX that have been rated highly by other women.
+  Emplower works by gathering anonymous company reviews (what people like and don't like about their company) and how a company scores on their workplace environment, benefits, and career advancement opportunities as ranked by other women.
+  Everyone's values and preferences are different, that is why Emplower allows you to rank the importance of your search and recomends companys that maximizes the likelihood of company fit.
+ </p>
+ <br>
+   <p> <b> Drag and drop the following categories according to your preferences: </b></p>
+  </div>
+
+
+  <!-- Reccomendations Section plugins-->
+<script   src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> 
+
+<!-- <form action = ""/recommendations" method = "GET, or POST"... when you submit the form gets sent to the reccomendations yelp_function
+then the function will have access to this list, then (hopefully) you will know the order and can get the rankings from that -->
+
+
+
+<div class="w3-row-padding w3-padding-16 " id="ranknumber">
+    <div class="w3-third w3-center w3-ul">
+    <ul list-style-type = "none">
+    <ul value="1">1. Most Important</ul>
+    <br>
+    <ul value="2">2.</ul>
+        <br>
+    <ul value="3">3.</ul>
+        <br>
+    <ul value="4">4.</ul>
+        <br>
+    <ul value="5">5.</ul>
+        <br>
+    <ul value="6">6.</ul>
+        <br>
+    <ul value="7">7. Least Important</ul>
+    </ul>
+
+    </form>
+    </div>
+    <div class="w3-half">
+    <form action= "/results", method ="GET">
+      <div class="form-group" style="max-width:800px">
+      <input id ="items" name ="items" type ="hidden"/>
+    <ul id="sortable4" class="w3-ul w3-border">
+    <li value="ManagementOpps">Management Opportunities</li>
+    <li value="MentOpps" >Mentorship Opportunities</li>
+    <li value="LearnOpps">Learning Opportunities</li>
+    <li value="Maternity">Maternity Leave</li>
+    <li value="SalarySat">Salary Satisfaction</li>
+    <li value="PaidTime">Paid Time Off</li>
+    <li value="FlexHours">Flexible Hours</li>
+  </ul></div>
+  <br>
+  <button class="w3-btn w3-black" type="submit">Submit Rankings</button>
+    </div>
+  <br><br>
+  </form>
+  </div>
+  <br><br>
+
+<!-- <div class="w3-container w3-center">
+  <div class="w3-middle ">
+  </div>
+  <form action= "/results", method ="GET">
+    <div class="form-group" style="max-width:600px">
+    <input id ="items" name ="items" type ="hidden"/>
+  <ul id="sortable4" class="w3-ul w3-border">
+  <li value="ManagementOpps">Management Opportunities</li>
+  <li value="MentOpps" >Mentorship Opportunities</li>
+  <li value="LearnOpps">Learning Opportunities</li>
+  <li value="Maternity">Maternity Leave</li>
+  <li value="SalarySat">Salary Satisfaction</li>
+  <li value="PaidTime">Paid Time Off</li>
+  <li value="FlexHours">Flexible Hours</li>
+</ul></div>
+<br>
+<button class="w3-btn w3-black" type="submit">Submit Rankings</button>
+<br><br>
+</form>
+</div>
+
+  </div>
+  <ul id="numbered">
+  <ul value="1">1.</ul>
+  <ul value="2" >2.</ul>
+  <ul value="3">3.</ul>
+  <ul value="4">4.</ul>
+  <ul value="5">5.</ul>
+  <ul value="6">6.</ul>
+  <ul value="7">7.</ul>
+</ul>
+<br>
+<br><br>
+</form>
+  </div>
+
+
+-->
+  <!-- End Page Content -->
+  <!-- Footer -->
+  <footer class="w3-center w3-black w3-padding-16">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <a style="text-decoration:none" href="https://www.joywyckoff.com/" title="joys_site" target="_blank" class="w3-hover-text-green"><p>Joy Wyckoff, Ph.D. </p></a>
+    <a style="text-decoration:none" href="https://www.joywyckoff.com/" target="_blank" <i class="fa fa-globe w3-hover-opacity"></i></a>
+    <a style="text-decoration:none" href="https://www.linkedin.com/in/joywyckoff/"  target="_blank"<i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    <a style="text-decoration:none" href="https://medium.com/@joyplumeri" target="_blank"<i class="fa fa-medium w3-hover-opacity"></i></a>
+    <a style="text-decoration:none" href="https://twitter.com/JoyPWyckoff" target="_blank"<i class="fa fa-twitter w3-hover-opacity"></i></a>
+  </footer>
+
+
+
+<!-- java script for sorting buttons -->
+  <script> $("#sortable4").sortable(); </script>
+  <script>
+    var listValues = ['ManagementOpps', 'MentOpps', 'LearnOpps', 'Maternity', 'SalarySat', 'PaidTime', 'FlexHours'];
+    var $sortableList = $("#sortable4");
+    var sortEventHandler = function(event, ui){
+      var listElements = $sortableList.children();
+      listValues = [];
+  //  console.log(listElements); // [ <li>, <li>, ... ]
+      Array.from($sortableList.children()).forEach(function(element){
+         listValues.push(element.innerHTML);
+         //console.log(listValues);
+       });
+      $("#items").attr("value", listValues);
+      console.log($("#items").value)
+  };
+
+  $sortableList.sortable({
+    stop: sortEventHandler
+  });
+
+  $sortableList.on("sortchange", sortEventHandler);
+  </script>
+
+
+
+  <!-- js and jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <!-- end -->
+  </body>
+  </html>

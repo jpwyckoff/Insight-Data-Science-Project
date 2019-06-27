@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html>
+<title>EMPLOWER</title>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+      <a href="/" class="w3-bar-item w3-button">EM<b>P</b>L<b>OWER</b> Austin</a>
+      <!-- Float links to the right. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+      <!--  <a href="#projects" class="w3-bar-item w3-button">Emplower</a> -->
+        <a href="/about" class="w3-bar-item w3-button">About</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+    <img class="w3-image" src="/static/img/Picture1.png" alt="Architecture" width="1500" height="800">
+    <div class="w3-display-middle w3-margin-top w3-center">
+      <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>EMPLOWER</b></span> </h1>
+    </div>
+  </header>
+
+  <!-- Page content -->
+  <div class="w3-content w3-padding" style="max-width:1564px">
+
+<!-- recommendations results page -->
+<!-- move this to a new page -results- so that it will display after the submit -->
+
+    <!-- Reccomendations Section -->
+ <div class="w3-container w3-padding-32" id="recommendations">
+   <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Reccomended Companies</h3>
+   <p>Thank you for submitting your rankings. Below are 6 companies we think that would be a good fit for you based on employees reviews.
+   </p>
+ </div>
+
+
+
+<div class="w3-row-padding">
+ <div class="w3-row-padding w3-grayscale">
+   <div class="w3-third  l3 m6 w3-margin-bottom w3-center w3-third">
+     <img src={{company_logo_paths[0]}} alt="Company1" style="height:100px">
+     <h4>{{company_names[0]}}</h4>
+     <p> <img src="/static/img/greystar.png" alt="gds1" style="height:30px">
+     {{gd_stars[0]}} on Glassdoor.com</p>
+     <p> <img src="/static/img/greystar.png" alt="ihss1" style="height:30px">
+     {{ihs_stars[0]}} on InHerSight.com</p>
+     <form action={{html_paths[0]}} method="get" target="_blank">
+     <p><button class="w3-button w3-light-grey w3-block">Job Openings</button></p>
+      </form>
+     <h5>Relevant Reviews</h5>
+     <p> {{pto_reviews[0]}} </p>
+   </div>
+
+
+
+   <div class="w3-third l3 m6 w3-margin-bottom w3-center w3-third">
+     <img src={{company_logo_paths[1]}} alt="Company2" style="height:100px">
+     <h4>{{company_names[1]}}</h4>
+     <p> <img src="/static/img/greystar.png" alt="gds2" style="height:30px">
+     {{gd_stars[1]}} on Glassdoor.com</p>
+     <p> <img src="/static/img/greystar.png" alt="ihss2" style="height:30px">
+     {{ihs_stars[1]}} on InHerSight.com</p>
+     <form action={{html_paths[1]}} method="get" target="_blank">
+     <p><button class="w3-button w3-light-grey w3-block">Job Openings</button></p>
+     </form>
+     <h5>Relevant Reviews</h5>
+     <p> {{pto_reviews[1]}} </p>
+   </div>
+
+   <div class="w3-third  l3 m6 w3-margin-bottom w3-center">
+     <img src={{company_logo_paths[2]}} alt="Company3" style="height:100px">
+     <h4>{{company_names[2]}}</h4>
+     <p> <img src="/static/img/greystar.png" alt="gds3" style="height:30px">
+     {{gd_stars[2]}} on Glassdoor.com</p>
+     <p> <img src="/static/img/greystar.png" alt="ihss3" style="height:30px">
+     {{ihs_stars[2]}} on InHerSight.com</p>
+      <form action={{html_paths[2]}} method="get" target="_blank">
+     <p><button class="w3-button w3-light-grey w3-block">Job Openings</button></p>
+     </form>
+     <h5>Relevant Reviews</h5>
+     <p> {{pto_reviews[2]}} </p>
+   </div>
+   </div>
+
+<br><br>
+
+<div class="w3-row-padding">
+   <div class="w3-third l3 m6 w3-margin-bottom w3-center">
+     <img src={{company_logo_paths[3]}} alt="Company4" style="height:100px">
+     <h4>{{company_names[3]}}</h4>
+     <p> <img src="/static/img/greystar.png" alt="gds4" style="height:30px">
+     {{gd_stars[3]}} on Glassdoor.com</p>
+     <p> <img src="/static/img/greystar.png" alt="ihss4" style="height:30px">
+     {{ihs_stars[3]}} on InHerSight.com</p>
+     <form action={{html_paths[3]}} method="get" target="_blank">
+     <p><button class="w3-button w3-light-grey w3-block">Job Openings</button></p>
+      </form>
+      <h5>Relevant Reviews</h5>
+      <p> {{pto_reviews[3]}} </p>
+   </div>
+
+
+   <div class="w3-third l3 m6 w3-margin-bottom  w3-center">
+     <img src={{company_logo_paths[4]}} alt="Company5" style="height:100px">
+     <h4>{{company_names[4]}}</h4>
+     <p> <img src="/static/img/greystar.png" alt="gds3" style="height:30px">
+     {{gd_stars[4]}} on Glassdoor.com</p>
+     <p> <img src="/static/img/greystar.png" alt="ihss3" style="height:30px">
+     {{ihs_stars[4]}} on InHerSight.com</p>
+      <form action={{html_paths[4]}} method="get" target="_blank">
+     <p><button class="w3-button w3-light-grey w3-block">Job Openings</button></p>
+     </form>
+     <h5>Relevant Reviews</h5>
+     <p> {{pto_reviews[4]}} </p>
+   </div>
+
+   <div class="w3-third l3 m6 w3-margin-bottom w3-center">
+     <img src={{company_logo_paths[5]}} alt="Company6" style="height:100px">
+     <h4>{{company_names[5]}}</h4>
+     <p> <img src="/static/img/greystar.png" alt="gds4" style="height:30px">
+     {{gd_stars[5]}} on Glassdoor.com</p>
+     <p> <img src="/static/img/greystar.png" alt="ihss4" style="height:30px">
+     {{ihs_stars[5]}} on InHerSight.com</p>
+     <form action={{html_paths[5]}} method="get" target="_blank">
+     <p><button class="w3-button w3-light-grey w3-block">Job Openings</button></p>
+      </form>
+      <h5>Relevant Reviews</h5>
+      <p> {{pto_reviews[5]}} </p>
+   </div>
+  </div>
+ </div>
+ <br><br>
+
+
+
+ <!-- End Page Content -->
+
+
+ <!-- Footer -->
+ <footer class="w3-center w3-black w3-padding-16">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <a style="text-decoration:none" href="https://www.joywyckoff.com/" title="joys_site" target="_blank" class="w3-hover-text-green"><p>Joy Wyckoff, Ph.D. </p></a>
+   <a style="text-decoration:none" href="https://www.joywyckoff.com/" target="_blank" <i class="fa fa-globe w3-hover-opacity"></i></a>
+   <a style="text-decoration:none" href="https://www.linkedin.com/in/joywyckoff/"  target="_blank"<i class="fa fa-linkedin w3-hover-opacity"></i></a>
+   <a style="text-decoration:none" href="https://medium.com/@joyplumeri" target="_blank"<i class="fa fa-medium w3-hover-opacity"></i></a>
+   <a style="text-decoration:none" href="https://twitter.com/JoyPWyckoff" target="_blank"<i class="fa fa-twitter w3-hover-opacity"></i></a>
+ </footer>
+
+
+
+
+   <!-- end -->
+ </body>
+ </html>
