@@ -1,4 +1,5 @@
 # to do: add in featured reviews
+import os
 
 from flask import Flask, request, render_template
 
@@ -26,7 +27,7 @@ def index():
 def display_results():
     #print(request.form.get("items"))
     #if request.method == "GET":
-    full_df = pd.read_csv('data/2companyScoresDF.csv', header = 0)
+    full_df = pd.read_csv("/home/ubuntu/JoysApp/data/2companyScoresDf.csv")
     #just getting the scores
     #update this since replaceing flexible hours w working remotely
     data = full_df[['Mentorship_predicted',
@@ -62,30 +63,21 @@ def display_results():
     total_score = np.sum(weighted_data, axis = 1)
     #print(total_score)
     ranked_companies_index = sorted(range(len(total_score)), key=lambda i: total_score[i], reverse=True)
-
     #write it out as a loop
     #for i in range(3):
     #    rec_{}.format(i) #something like that =
-    company_names =  full_df['company'][ranked_companies_index[0:6]]
-    company_logo_paths = full_df['logo_image'][ranked_companies_index[0:6]]
-    html_paths = full_df['company_website'][ranked_companies_index[0:6]]
-    gd_stars = full_df['GlassdoorOverall'][ranked_companies_index[0:6]]
-    ihs_stars = full_df['InHerSight_overall'][ranked_companies_index[0:6]]
+    company_names =  full_df['company'][ranked_companies_index[0:8]]
+    company_logo_paths = full_df['logo_image'][ranked_companies_index[0:8]]
+    html_paths = full_df['company_website'][ranked_companies_index[0:8]]
+    gd_stars = full_df['GlassdoorOverall'][ranked_companies_index[0:8]]
+    ihs_stars = full_df['InHerSight_overall'][ranked_companies_index[0:8]]
     first_reviews = full_df['pto_review'][ranked_companies_index[0:6]]
     second_reviews = full_df['ml_review'][ranked_companies_index[0:6]]
 
     return render_template('results.html', company_names = company_names.values, company_logo_paths = company_logo_paths.values, html_paths = html_paths.values, gd_stars = gd_stars.values, ihs_stars = ihs_stars.values, first_reviews = first_reviews.values, second_reviews = second_reviews.values)
-    #, linklist = linklist, etc)
 
 
 ##defines a new page
 @app.route('/about', methods=['GET','POST'])
 def display_about():
-    return render_template('about.html')#, linklist = linklist, etc)
-
-
-
-
-if __name__ == '__main__':
-    #this runs your app locally
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    return render_template('about.html')

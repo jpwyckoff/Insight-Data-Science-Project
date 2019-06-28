@@ -12,18 +12,33 @@
 <head>
 
 <script>
+
+src="http://code.jquery.com/jquery-1.7.2.min.js">
+src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"
+
+
 function allowDrop(ev) {
   ev.preventDefault();
 }
+
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
 }
+
 function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
 }
+
+src="jquery.ui.touch-punch.min.js"
+
+$('.sortable4').draggable();
+
 </script>
+
+<script src="scripts/DragDropTouch.js"></script>
+
 </head>
 <body>
 
@@ -63,7 +78,7 @@ function drop(ev) {
   Everyone's values and preferences are different, that is why Emplower allows you to rank the importance of your search and recomends companys that maximizes the likelihood of company fit.
  </p>
  <br>
-   <p> <b> Drag and drop the following categories according to your preferences: </b></p>
+   <p> <b> Drag and drop the following categories according such that the <i> Most Important </i> category is at the top: </b></p>
   </div>
 
 
@@ -75,7 +90,7 @@ function drop(ev) {
 then the function will have access to this list, then (hopefully) you will know the order and can get the rankings from that -->
 
 
-
+<!--
 <div class="w3-row-padding w3-padding-16 " id="ranknumber">
     <div class="w3-third w3-center w3-ul">
     <ul list-style-type = "none">
@@ -96,6 +111,7 @@ then the function will have access to this list, then (hopefully) you will know 
 
     </form>
     </div>
+
     <div class="w3-half">
     <form action= "/results", method ="GET">
       <div class="form-group" style="max-width:800px">
@@ -116,8 +132,9 @@ then the function will have access to this list, then (hopefully) you will know 
   </form>
   </div>
   <br><br>
+-->
 
-<!-- <div class="w3-container w3-center">
+ <div class="w3-container w3-center">
   <div class="w3-middle ">
   </div>
   <form action= "/results", method ="GET">
@@ -137,24 +154,10 @@ then the function will have access to this list, then (hopefully) you will know 
 <br><br>
 </form>
 </div>
-
-  </div>
-  <ul id="numbered">
-  <ul value="1">1.</ul>
-  <ul value="2" >2.</ul>
-  <ul value="3">3.</ul>
-  <ul value="4">4.</ul>
-  <ul value="5">5.</ul>
-  <ul value="6">6.</ul>
-  <ul value="7">7.</ul>
-</ul>
-<br>
-<br><br>
-</form>
   </div>
 
 
--->
+
   <!-- End Page Content -->
   <!-- Footer -->
   <footer class="w3-center w3-black w3-padding-16">
